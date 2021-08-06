@@ -1,0 +1,18 @@
+h2 
+	{
+		color: red;
+		font-size: 70px;
+		margin: 0px;
+		background-color: blue;
+		text-align: center;
+	}
+	
+.index-h2
+{
+	color: black;
+}
+
+.index-intro p
+{
+	color: green;
+}
