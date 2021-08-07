@@ -3,19 +3,31 @@
 	<head>
 		<meta charset= "utf-8">
 		<title> Reconnect </title>
+		<style>
+			#map
+			{
+				height: 400px;
+				width: 100%;
+			}
+		</style>
+		<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href= "style.css">
 	</head>
 	<body>
-		<h2>
-			This is the title
-		</h2>
-		<div class= "index-intro">
-			<p>
-				Lorem ipsum
-			</p>
-		</div>
-		<h2 class= "index-h2">
-			Hello
-		</h2>
+		<h1>My Google Map</h1>
+		<div id="map"></div>
+		<script> 
+			function initMap()
+			{
+				var options= 
+				{
+					zoom:8,
+					center: {lat: 42.35866, lng: -71.05674}
+				}
+				var map= new google.maps.Map(document.getElementById('map'), options);
+				var marker= new google.maps.Marker ({position: {lat:42.466763, lng: -70.949493}, map:map, icon: 'park.png'});
+	}
+		</script>
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBDoOIZEX_WROLw_8JsS8SHxxBzUKmDI&callback=initMap"></script>
 	</body>
 </html>

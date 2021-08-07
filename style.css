@@ -1,3 +1,4 @@
+/*
 h2 
 	{
 		color: red;
@@ -7,12 +8,53 @@ h2
 		text-align: center;
 	}
 	
-.index-h2
+	Classes using '.', specific element inside div can be targeted by adding to the end.
+	.index-intro p
+	{
+	color: green;
+	}
+
+	ID tags using '#'
+	#index-h2
+	{
+	color: green
+	}
+	
+	h1
+	{
+		font-family: arial, "Times New Roman";
+		font-size: 22px;
+		font-style: italic;
+		font-weight: 500;
+		text-align: left;
+		text-decoration: underline;
+		text-indent: 30px;
+		text-transform: lowercase;
+		color: rgba(77,0,255,1);
+		word-spacing: 5px;
+	}
+
+	p
+	{
+		line-height: 40px;
+		font-size: 22px;
+		text-indent: 30px;
+	}
+
+	a
+	{
+		text-decoration: underline;
+	}
+*/
+
+
+.paragraph
 {
-	color: black;
+	font-size: 50px;
+	line-height: 62px;
+	text-indent: 30px;
+	font-family: 'MonteCarlo', cursive;
+	text-decoration: underline;
 }
 
-.index-intro p
-{
-	color: green;
-}
+
