@@ -21,12 +21,60 @@
 			{
 				var options= 
 				{
-					zoom:8,
+					zoom:5,
 					center: {lat: 42.35866, lng: -71.05674}
 				}
 				var map= new google.maps.Map(document.getElementById('map'), options);
-				var marker= new google.maps.Marker ({position: {lat:42.466763, lng: -70.949493}, map:map, icon: 'park.png'});
-	}
+				
+				// Listen for click on map
+				
+				google.maps.event.addListener(map, 'click', 
+				function(event)
+				{
+					addMarker({coords:event.latLng, iconImage: 'park.png'});
+				}
+				);
+				
+				
+				// Array of Markers
+				
+				var markers= [{coords:{lat:42.466763, lng: -70.949493}, iconImage: 'park.png', content: '<h1>Yooooo</h1>'},{coords:{lat:46, lng: -72}}];
+				
+				// Loop through markers
+				
+				for(var i=0; i< markers.length; i++)
+				{
+					addMarker(markers[i])
+				}
+				
+				//Add Marker Function
+				function addMarker(props)
+				{
+					var marker= new google.maps.Marker
+					({
+						position: props.coords, 
+						map:map, 
+					});	
+					if (props.iconImage)
+					{
+						marker.setIcon(props.iconImage);
+					}
+					
+					// Check Content
+					if(props.content)
+					{
+						var infoWindow= new google.maps.InfoWindow
+						({
+							content: props.content
+						});
+				
+						marker.addListener('click', function()
+						{
+						infoWindow.open(map,marker);
+						});
+					}
+				}
+			}
 		</script>
 		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBDoOIZEX_WROLw_8JsS8SHxxBzUKmDI&callback=initMap"></script>
 	</body>
