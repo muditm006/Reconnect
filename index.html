@@ -3,18 +3,19 @@
 	<head>
 		<meta charset= "utf-8">
 		<title> Reconnect </title>
-		<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" href="Favicon_new.jpg">
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href= "style.css">
 	</head>
 	<body>
-		<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
-		<button class="tablink" onclick="openPage('Events', this, 'green')">Events</button>
-		<button class="tablink" onclick="openPage('Rewards', this, 'blue')">Rewards</button>
+		<button class="tablink" onclick="openPage('Home', this, '#9d8562')" id="defaultOpen">Home</button>
+		<button class="tablink" onclick="openPage('Events', this, '#7cec79')">Events</button>
+		<button class="tablink" onclick="openPage('Rewards', this, '#74aff2')">Rewards</button>
 		<div id="Home" class="tabcontent">
-			<h1>Reconnect Bro smh</h1>
+			<image src="RECONNECT.gif" class= "center"></image>
 		</div>
 		<div id="Events" class="tabcontent">
-			<h1>My Google Map</h1>
+			<h1 id= "header">Add/Search Events in Your Area</h1>
 			<div id="map"></div>
 			<input type="number" id="longitude" placeholder= "Longitude"/>
 			<input type="number" id="latitude" placeholder= "Latitude"/>
@@ -27,3 +28,5 @@
 		<script src= "script.js"></script>
 	</body>
 </html>
+
+

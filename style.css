@@ -86,14 +86,28 @@ body, html {
   height: 100%;
 }
 
-#Home {background-color: #b66d36;}
-#Events {background-color: green;}
-#Rewards {background-color: blue;}
+#Home {background-color: #5e503b;}
+#Events {background-color: #50e64c;}
+#Rewards {background-color: #4594ed;}
 
 
 #map
 {
-	height: 400px;
+	height: 600px;
 	width: 100%;
 	
+}
+
+#header
+{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 60px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
