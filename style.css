@@ -68,7 +68,7 @@ body, html {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 33%;
+  width: 33.3333%;
 }
 
 .tablink:hover {
@@ -79,7 +79,6 @@ body, html {
 .tabcontent {
   display: none;
   padding: 100px 20px;
-  height: 100%;
 }
 
 #Home {background-color: #5e503b;}
@@ -108,8 +107,17 @@ body, html {
   width: 50%;
 }
 
-.image1 {
-  width: 50%
-  height: 50%
-  border-radius: 10px
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.image {
+  flex-basis: 40%
+}
+
+.text {
+  font-size: 15px;
+  padding-left: 20px;
 }
