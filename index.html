@@ -3,7 +3,7 @@
 	<head>
 		<meta charset= "utf-8">
 		<title> Reconnect </title>
-		<link rel="shortcut icon" href="Favicon_new.jpg">
+		<link rel="shortcut icon" href="images/Favicon_new.jpg">
 		<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href= "style.css">
 	</head>
@@ -17,8 +17,8 @@
 		<div id="Events" class="tabcontent">
 			<h1 id= "header">Add/Search Events in Your Area</h1>
 			<div id="map"></div>
-			<input type="number" id="longitude" placeholder= "Longitude"/>
-			<input type="number" id="latitude" placeholder= "Latitude"/>
+			<input type="number" min= "min_value"max= "max_value" id="latitude" placeholder= "Latitude"/>
+			<input type="number" min= "min_value"max= "max_value" id="longitude" placeholder= "Longitude"/>
 			<button onclick="submit()" id= "submit"> Submit </button>
 		</div>
 		<div id="Rewards" class="tabcontent">
