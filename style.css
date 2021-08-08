@@ -1,5 +1,5 @@
 /*
-h2 
+h2
 	{
 		color: red;
 		font-size: 70px;
@@ -7,19 +7,18 @@ h2
 		background-color: blue;
 		text-align: center;
 	}
-	
+
 	Classes using '.', specific element inside div can be targeted by adding to the end.
 	.index-intro p
 	{
 	color: green;
 	}
-
 	ID tags using '#'
 	#index-h2
 	{
 	color: green
 	}
-	
+
 	h1
 	{
 		font-family: arial, "Times New Roman";
@@ -33,14 +32,12 @@ h2
 		color: rgba(77,0,255,1);
 		word-spacing: 5px;
 	}
-
 	p
 	{
 		line-height: 40px;
 		font-size: 22px;
 		text-indent: 30px;
 	}
-
 	a
 	{
 		text-decoration: underline;
@@ -53,7 +50,6 @@ h2
 		font-family: 'MonteCarlo', cursive;
 		text-decoration: underline;
 	}
-
 */
 
 /* Set height of body and the document to 100% to enable "full page tabs" */
@@ -64,7 +60,7 @@ body, html {
 
 /* Style tab links */
 .tablink {
-  background-color: #555;
+  background-color: #594533;
   color: white;
   float: left;
   border: none;
@@ -87,15 +83,15 @@ body, html {
 }
 
 #Home {background-color: #5e503b;}
-#Events {background-color: #50e64c;}
-#Rewards {background-color: #4594ed;}
+#Events {background-color: #a5d88f;}
+#Rewards {background-color: #f0f08a;}
 
 
 #map
 {
 	height: 600px;
 	width: 100%;
-	
+    border-radius: 35px
 }
 
 #header
@@ -110,4 +106,10 @@ body, html {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.image1 {
+  width: 50%
+  height: 50%
+  border-radius: 10px
 }
