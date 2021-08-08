@@ -1,6 +1,5 @@
 
 // Creates the map
-
 function initMap()
 {
 	var options=
@@ -82,6 +81,8 @@ function initMap()
 	}
 	return map;
 }
+
+var events= ["Fairchild Tropical Botanical Garden", "Pelican Harbor Seabird Station", "Arthur R. Marshall Loxahatchee National Wildlife Refuge", "Gumbo Limbo Nature Center", "Ocala National Forest", "Biscayne National Park","Everglades National Park"];
 
 
 function openPage(pageName, elmnt, color) {
@@ -190,6 +191,7 @@ function submit()
 	var latitude= document.getElementById("latitude");
 	var longitude= document.getElementById("longitude");
 	var title= document.getElementById("name");
+	events.push(title.value);
 	var description= document.getElementById("description");
 	var description_image = document.getElementById("description_image");
 	var full_description= "<center><h1>" + title.value + "</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
@@ -201,5 +203,42 @@ function submit()
 	description.value = "";
 	description_image.value = "";
 	return map;
+}
+
+
+function fn1()
+{
+	for(var i= 0; i<events.length;i++)
+	{
+		var b= "rd"+(i+1);
+		var elemento= document.getElementById(b);
+		if(elemento.checked==true)
+		{
+			alert("Registered for " + elemento.value);
+		}
+	}
+}
+
+function event_click()
+{
+	document.getElementById("elements").innerHTML = "";
+	var a= document.getElementById("elements");
+	for(var i=0; i<events.length;i++)
+	{
+		var radiobox = document.createElement('input');
+		var label= document.createElement("label");
+		var br = document.createElement("br");
+		radiobox.type = 'radio';
+		radiobox.id = 'rd'+(i+1);
+		radiobox.value = events[i];
+		radiobox.name= 'grp1';
+		label.setAttribute("for",radiobox);
+		label.innerHTML= events[i];
+		a.appendChild(radiobox); 
+		a.appendChild(label);    
+		a.appendChild(br);
+	}
+	a.innerHTML += "<button onclick= 'fn1()'>Submit</button>";
+	
 }
 
