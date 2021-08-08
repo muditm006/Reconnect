@@ -17,8 +17,12 @@
 		<div id="Events" class="tabcontent">
 			<h1 id= "header">Add/Search Events in Your Area</h1>
 			<div id="map"></div>
-			<input type="number" min= "min_value"max= "max_value" id="latitude" placeholder= "Latitude"/>
-			<input type="number" min= "min_value"max= "max_value" id="longitude" placeholder= "Longitude"/>
+			</br></br>
+			<input type="number" step= "any" min= "min_value"max= "max_value" id="latitude" class= "coordinates" placeholder= "Latitude"/>
+			<input type="number" step= "any" min= "min_value"max= "max_value" id="longitude" class= "coordinates" placeholder= "Longitude"/>
+			<textarea name="info" id="name" cols="30" rows="10" placeholder= "Enter your event name"></textarea>
+			<textarea name="information" id="description" cols="30" rows="10" placeholder= "Enter information about your event"></textarea>
+			<textarea name="information_image" id="description_image" cols="30" rows="10" placeholder= "Enter URL for Event Image"></textarea>
 			<button onclick="submit()" id= "submit"> Submit </button>
 		</div>
 		<div id="Rewards" class="tabcontent">
