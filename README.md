@@ -1,4 +1,4 @@
-# "Reconnect"
+# "RECONNECT"
 ## StemWarriors Hackathon 2021
 "RECONNECT" was created by Mudit Marwaha and Jennifer Chiou in August of 2021. 
 
