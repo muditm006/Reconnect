@@ -51,6 +51,7 @@ textarea
 }
 
 /* These next tabs were used when adding different markers onto the Google Map*/
+
 .center {
   display: block;
   margin-left: auto;
@@ -117,6 +118,7 @@ textarea
 /* These next tags were used to customize the selection screen when signing up for events. */
 
 /* Customize the label (the container) */
+
 .containers {
   display: block;
   position: relative;
@@ -130,6 +132,7 @@ textarea
 }
 
 /* Hide the browser's default radio button */
+
 .containers input {
   position: absolute;
   opacity: 0;
@@ -139,6 +142,7 @@ textarea
 }
 
 /* Create a custom radio button */
+
 .checkmark {
   position: absolute;
   top: 0;
@@ -150,16 +154,19 @@ textarea
 }
 
 /* On mouse-over, add a grey background color */
+
 .containers:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
+
 .containers input:checked ~ .checkmark {
   background-color: #2196F3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
+
 .checkmark:after {
   content: "";
   position: absolute;
@@ -167,11 +174,13 @@ textarea
 }
 
 /* Show the indicator (dot/circle) when checked */
+
 .containers input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
+
 .containers .checkmark:after {
   top: 9px;
   left: 9px;
@@ -184,6 +193,7 @@ textarea
 /* These next tags were used when styling the drop down of 'recent signups' on the rewards tab */
 
 /* Style the buttons that are used to open and close the accordion panel */
+
 .accordion {
   background-color: #d678ed;
   color: #444;
@@ -197,6 +207,7 @@ textarea
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
 .active, .accordion:hover {
   background-color: #ccc;
 }
@@ -230,17 +241,12 @@ textarea
 /* This final section of tags targets HTML elements by their 'id' attribute*/
 
 /* Sets the colors for the different tabs of the website */
+
 #Home {background-color: #5e503b;}
 #Events {background-color: #a5d88f;}
 #Rewards {background-color: #f0f08a;}
 
-
-#map
-{
-	height: 600px;
-	width: 100%;
-    border-radius: 35px
-}
+/* This sets up the various headers on the website */
 
 #header
 {
@@ -249,17 +255,34 @@ textarea
 	font-size: 60px;
 }
 
-#purchase
+#sub_header
 {
-	width: 100%;
-	height: 75px;
-	font-family: 'Cinzel', serif; 
-	font-size:40px;
-	margin: 50px 0px 0px 0px;
-	background-color: #e4a5f3;
-	border-radius: 6px;
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 45px;
+	text-decoration: underline;
 }
 
+
+/* Sets up the Google Map on the top of Events tab*/
+
+#map
+{
+	height: 600px;
+	width: 100%;
+    border-radius: 35px
+}
+
+/* Sets up the radio button labels for the event sign up selection on the bottom of the Events tab*/
+
+#styler
+{
+	font-size: 25px;
+	font-family: 'Cinzel', serif;
+}
+
+
+/* Sets up the Submit button on new event creation */
 
 #submit
 {
@@ -273,14 +296,7 @@ textarea
 }
 
 
-
-#sub_header
-{
-	font-family: 'Cinzel', serif;
-	text-align: center;
-	font-size: 45px;
-	text-decoration: underline;
-}
+/* Sets up the profile image that is at the top of the rewards tab*/
 
 #profile
 {
@@ -291,17 +307,26 @@ textarea
 	margin: 0px 20px 0px 0px;
 }
 
-#styler
-{
-	font-size: 25px;
-	font-family: 'Cinzel', serif;
-}
 
+/* Sets up the various gift cards on the rewards tab*/
 
 #gift
 {
 	width:400px;
 	height:250px;
+	border-radius: 6px;
+}
+
+/* Sets up the purchase button on the bottom of the Rewards tab */
+
+#purchase
+{
+	width: 100%;
+	height: 75px;
+	font-family: 'Cinzel', serif; 
+	font-size:40px;
+	margin: 50px 0px 0px 0px;
+	background-color: #e4a5f3;
 	border-radius: 6px;
 }
 

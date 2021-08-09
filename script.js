@@ -1,6 +1,8 @@
+// Sets up variables that are accessed in various functions, such as an array of the different purchases made, the amount spent, and your total balance, which we have defaulted to 5000 for the purpose of demonstration.
 var purchases= [];
 var total_spent= 0;
 var balancio= 5000;
+
 // Creates the map
 function initMap()
 {
@@ -22,13 +24,6 @@ function initMap()
 				icon: 'images/park.png'
 			});
 
-			/*
-			if (props.iconImage)
-			{
-				marker.setIcon(props.iconImage);
-			}
-			*/
-
 			// Check Content
 			if(props.content)
 			{
@@ -45,19 +40,7 @@ function initMap()
 			
 		}
 
-	// Listen for click on map
-	
-	/*
-	google.maps.event.addListener(map, 'click',
-	function(event)
-	{
-		addMarker({coords:event.latLng, iconImage: 'park.png'});
-	}
-	);
-	*/
-
-
-	// Creates array of markers
+	// Creates array of markers, we set some preset markers for demonstration purposes.
 
 	var markers= [{coords:{lat: 25.6785, lng: -80.27422},
 		content: "<center><h1>Fairchild Tropical Botanical Garden</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src='images/fairchild.jpg' alt='Scenery at Fairchild Garden'></div><div class='text'><h3>Described by many as a tropical wonderland, Fairchild is home to a beautiful selection of rare, tropical plants and native flowers. It also focuses on educating its visitors, as it offers school programs, scholarships, and even graduate fellowships.</h3></div></div>"},
@@ -113,6 +96,8 @@ function openPage(pageName, elmnt, color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
+// This function is run when you add a new marker, unfortunately the only way we found to make this function run properly is by running the initMap() function all over again, which is not ideal but gets the job done. After the map has been regenerated with our preset points, it adds the users new marker.
+
 function submit()
 {
 		var options=
@@ -133,12 +118,6 @@ function submit()
 				icon: 'images/park.png'
 			});
 
-			/*
-			if (props.iconImage)
-			{
-				marker.setIcon(props.iconImage);
-			}
-			*/
 
 			// Check Content
 			if(props.content)
@@ -156,20 +135,7 @@ function submit()
 			
 		}
 
-	// Listen for click on map
-	
-	/*
-	google.maps.event.addListener(map, 'click',
-	function(event)
-	{
-		addMarker({coords:event.latLng, iconImage: 'park.png'});
-	}
-	);
-	*/
-
-
-	// Creates array of markers
-
+	// Creates array of markers, we set some preset markers for demonstration purposes.
 	var markers= [{coords:{lat: 25.6785, lng: -80.27422},
 		content: "<center><h1>Fairchild Tropical Botanical Garden</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src='images/fairchild.jpg' alt='Scenery at Fairchild Garden'></div><div class='text'><h3>Described by many as a tropical wonderland, Fairchild is home to a beautiful selection of rare, tropical plants and native flowers. It also focuses on educating its visitors, as it offers school programs, scholarships, and even graduate fellowships.</h3></div></div>"},
 	{coords:{lat: 25.849405269180505, lng: -80.16459259788341},
@@ -192,6 +158,8 @@ function submit()
 	{
 		addMarker(markers[i])
 	}
+	
+	// Here is where we add the user's new marker. 
 	var latitude= document.getElementById("latitude");
 	var longitude= document.getElementById("longitude");
 	var title= document.getElementById("name");
@@ -201,6 +169,7 @@ function submit()
 	var full_description= "<center><h1>" + title.value + "</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
 	var test= {coords: {lat: Number(latitude.value), lng: Number(longitude.value)}, content: full_description};
 	addMarker(test)
+	// After adding the marker to the map and to the array of events, we wipe all the variables clean so that the user can add a new marker later.
 	latitude.value = " ";
 	longitude.value = " ";
 	title.value = "";
@@ -209,11 +178,12 @@ function submit()
 	return map;
 }
 
-
+// This function is what is run when you submit which events you want to participate in.
 function fn1()
 {
 	for(var i= 0; i<events.length;i++)
 	{
+		//Each radio button has an id of 'rdx', with x incrementing by 1.
 		var b= "rd"+(i+1);
 		var elemento= document.getElementById(b);
 		if(elemento.checked==true)
@@ -224,7 +194,7 @@ function fn1()
 	}
 }
 
-
+// This function is what shows what recent events you have signed up for on the events tab.
 function my_profile()
 {
 	document.getElementById("panel").innerHTML = "";
@@ -240,7 +210,7 @@ function my_profile()
 		}
 	}
 }
-
+// This is what is run when you click on the Sign up for events text.
 function event_click()
 {
 	document.getElementById("elements").innerHTML = "";
@@ -254,7 +224,7 @@ function event_click()
 	
 }
 
-
+// This is the javascript that sets up the drop down menu on the rewards tab.
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -270,6 +240,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// These functions are what is run when you click on the actual gift cards.
 function select_lush()
 {
 	lushy= document.getElementById("lush");
@@ -308,6 +279,7 @@ function select_ravenlily()
 	
 }
 
+// This is what is run when you submit which gift cards you want to buy, it provides you with a summary of what you bought, and then wipes all the variables so that you can make new purchases.
 function shop()
 {
 	var alerty= "You bought the following gift cards:\n"
