@@ -4,21 +4,21 @@
 
 This was submitted to the StemWarriors Hackathon.
 
-'''html
+```html
 <p id="CSS">In this project we coded a website using HTML.</p>
-'''
+```
 
-'''javascript
+```javascript
 var javascript= alert(The backend of the website was in Javascript!)
-'''
+```
 
-'''CSS
+```CSS
   //And the styling was in CSS!
   #CSS
   {
     color: blue;
   }
-'''
+```
 
 PLEASE READ
 
