@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Here the tab title and image are set up, as well as the stylesheet and custom font is linked.-->
 		<meta charset= "utf-8">
 		<title> Reconnect </title>
 		<link rel="shortcut icon" href="images/Favicon_new.jpg">
@@ -9,16 +10,22 @@
 		<link rel="stylesheet" href= "style.css">
 	</head>
 	<body>
+		<!-- Here we set up the three different tabs of the website-->
 		<button class="tablink" onclick="openPage('Home', this, '#9d8562')" id="defaultOpen">Home</button>
 		<button class="tablink" onclick="openPage('Events', this, '#98bd64')" >Events</button>
 		<button class="tablink" onclick="openPage('Rewards', this, '#e8dd4c')">Rewards</button>
+		<!-- This is the code for the homepage, in which we simply put our company logo. -->
 		<div id="Home" class="tabcontent">
 			<image src="images/RECONNECT.gif" class= "center"></image>
 		</div>
+		<!-- Here we set up the events tab, in which we have the map, add marker, and sign up for event systesms. -->
 		<div id="Events" class="tabcontent">
 			<h1 id= "header">Add/Search Events in Your Area</h1>
+			<!-- Because the map is actually being run throught an API key, there is no actual HTML for it here! -->
+			<!-- If you load up our website, you will see that the map is covered with a 'for development purposes only' message everywhere, this is because we used a free google account for our site, and you are required to use a paid billing account to remove that from the map. -->
 			<div id="map"></div>
 			</br></br>
+			<!-- Here is the set up system for when the user adds a marker to the system. -->
 			<input type="number" step= "any" min= "min_value"max= "max_value" id="latitude" class= "coordinates" placeholder= "Latitude"/>
 			<input type="number" step= "any" min= "min_value"max= "max_value" id="longitude" class= "coordinates" placeholder= "Longitude"/>
 			</br></br>
@@ -30,23 +37,30 @@
 				<button onclick="submit()" id= "submit"> Submit to Map</button>
 			</div>
 			</br></br>
+			<!-- Here we add the Link that allows you to sign up for events, all the buttons and submission are actually added in the javascript file! -->
 			<h1 onclick="event_click()" id= "sub_header">Click Here to Sign Up for an Event</h1>
 			<div id="elements"></div>
 		</div>
+		<!-- Finally, we set up the rewards tab. -->
 		<div id="Rewards" class="tabcontent">
 			<h1 id="header"> Redeem Your Connection Coins </h1>
+			<!-- Here, we set up the profile section of the tab. -->
 			<h1 id="sub_header">Your Profile</h1>
 			</br>
 			<image id= "profile" src= "images/profile.jpg"></image>
 			<h1 style="font-family: 'Cinzel', serif; font-size:25px;">Username: Mudit Marwaha</h1>
 			</br>
+			<!-- This is the drop down system that shows the recent events you signed up for on the events tab -->
 			<button onclick="my_profile()" style="font-family: 'Cinzel', serif; font-size:25px;" class="accordion">Recent Events Attended</button>
 			<div class="panel" id="panel"></div>
 			</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+			<!-- There is definetly a better way to space out this section from the shop, but hey this worked as well!-->
+			<!-- Here we set up the shop-->
 			<h1 id="sub_header">Reconnect Shop</h1>
 			<center>
 				<h1 style="font-family: 'Cinzel', serif; font-size:25px;" id="balance">Your Account Balance: <u>5,000</u> Coins</h1>
 			</center>
+			<!-- The following four figure elements are what add the gift cards to the page. -->
 			<figure id= "lush" class="lefty" onclick="select_lush()">
 				<img id="gift" src="images/lush.png"></img>
 				<figcaption style= "margin-top:25px">$10-$300, minimum of 100CC</figcaption>
@@ -63,8 +77,10 @@
 				<img id= "gift" src="images/raven_lily.png"></img>
 				<figcaption style= "margin-top:25px">$25-$500, minimum of 250CC</figcaption>
 			</figure>
+			<!-- This is the button that the user presses to purchase all the different gift cards they added. -->
 			<button onclick= "shop()" id="purchase"> Purchase Your Selections </button>
 		</div>
+		<!-- This is where we add the map and javascript file to the website, which is where the actual back-end of the website come from. -->
 		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBDoOIZEX_WROLw_8JsS8SHxxBzUKmDI&callback=initMap"></script>
 		<script src= "script.js"></script>
 	</body>

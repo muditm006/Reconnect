@@ -1,3 +1,5 @@
+// This is the Javascript file that is the back-end of the website, all of the functionality comes from this file.
+
 // Sets up variables that are accessed in various functions, such as an array of the different purchases made, the amount spent, and your total balance, which we have defaulted to 5000 for the purpose of demonstration.
 var purchases= [];
 var total_spent= 0;
