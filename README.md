@@ -9,7 +9,7 @@ This was submitted to the StemWarriors Hackathon.
 ```
 
 ```javascript
-var javascript= alert(The backend of the website was in Javascript!)
+var javascript= alert("The backend of the website was in Javascript!")
 ```
 
 ```CSS
