@@ -198,7 +198,7 @@ function submit()
 	events.push(title.value);
 	var description= document.getElementById("description");
 	var description_image = document.getElementById("description_image");
-	var full_description= "<center><h1>" + title.value + "</h1></center><div class='containers'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
+	var full_description= "<center><h1>" + title.value + "</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
 	var test= {coords: {lat: Number(latitude.value), lng: Number(longitude.value)}, content: full_description};
 	addMarker(test)
 	latitude.value = " ";

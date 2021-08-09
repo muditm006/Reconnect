@@ -1,9 +1,33 @@
+/* This is the CSS Style Sheet that styles the whole website */
+
+/*The following three tags are targetting all HTML instances of that type of element*/
+
 body, html {
   height: 100%;
   margin: 0;
 }
 
-/* Style tab links */
+input[type=radio] {
+   
+	width: 2%;
+	border: 0px;
+    height: 2em;
+}
+
+textarea
+{
+	border-radius: 6px;
+	width: 266.66px;
+	height: 100px;
+	font-size: 15px;
+	resize: none;
+}
+
+
+/* The following tags with '.x' syntax are targeting HTML elements in the x class. */
+
+/* This is what styles the different tabs of the website*/
+
 .tablink {
   background-color: #594533;
   color: white;
@@ -26,7 +50,7 @@ body, html {
   overflow:hidden;
 }
 
-
+/* These next tabs were used when adding different markers onto the Google Map*/
 .center {
   display: block;
   margin-left: auto;
@@ -57,6 +81,7 @@ body, html {
 	border-radius: 10px;
 }
 
+/* These tags were used to move the locations of the gift cards around*/
 
 .lefty
 {
@@ -89,89 +114,7 @@ body, html {
 	top: 925px;
 }
 
-#Home {background-color: #5e503b;}
-#Events {background-color: #a5d88f;}
-#Rewards {background-color: #f0f08a;}
-
-
-#map
-{
-	height: 600px;
-	width: 100%;
-    border-radius: 35px
-}
-
-#header
-{
-	font-family: 'Cinzel', serif;
-	text-align: center;
-	font-size: 60px;
-}
-
-#purchase
-{
-	width: 100%;
-	height: 75px;
-	font-family: 'Cinzel', serif; 
-	font-size:40px;
-	margin: 50px 0px 0px 0px;
-	background-color: #e4a5f3;
-}
-
-textarea
-{
-	border-radius: 6px;
-	width: 266.66px;
-	height: 100px;
-	font-size: 15px;
-	resize: none;
-}
-
-
-#submit
-{
-	width: 300px;
-	height: 150px;
-	font-size: 30px;
-	border-radius: 10px;
-	border: ridge 4px #abbbbc; 
-	font-family: 'Cinzel', serif;
-	background-color: #e3c6b6;
-}
-
-
-
-#sub_header
-{
-	font-family: 'Cinzel', serif;
-	text-align: center;
-	font-size: 45px;
-	text-decoration: underline;
-}
-
-#profile
-{
-	float: left;
-	width:350px; 
-	height:350px;
-	border-radius: 6px;
-	margin: 0px 20px 0px 0px;
-}
-
-#styler
-{
-	font-size: 25px;
-	font-family: 'Cinzel', serif;
-}
-
-
-#gift
-{
-	width:400px;
-	height:250px;
-	border-radius: 6px;
-}
-
+/* These next tags were used to customize the selection screen when signing up for events. */
 
 /* Customize the label (the container) */
 .containers {
@@ -238,12 +181,7 @@ textarea
   background: white;
 }
 
-input[type=radio] {
-   
-	width: 2%;
-	border: 0px;
-    height: 2em;
-}
+/* These next tags were used when styling the drop down of 'recent signups' on the rewards tab */
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
@@ -288,3 +226,83 @@ input[type=radio] {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
   size: 500px;
 }
+
+/* This final section of tags targets HTML elements by their 'id' attribute*/
+
+/* Sets the colors for the different tabs of the website */
+#Home {background-color: #5e503b;}
+#Events {background-color: #a5d88f;}
+#Rewards {background-color: #f0f08a;}
+
+
+#map
+{
+	height: 600px;
+	width: 100%;
+    border-radius: 35px
+}
+
+#header
+{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 60px;
+}
+
+#purchase
+{
+	width: 100%;
+	height: 75px;
+	font-family: 'Cinzel', serif; 
+	font-size:40px;
+	margin: 50px 0px 0px 0px;
+	background-color: #e4a5f3;
+	border-radius: 6px;
+}
+
+
+#submit
+{
+	width: 300px;
+	height: 150px;
+	font-size: 30px;
+	border-radius: 10px;
+	border: ridge 4px #abbbbc; 
+	font-family: 'Cinzel', serif;
+	background-color: #e3c6b6;
+}
+
+
+
+#sub_header
+{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 45px;
+	text-decoration: underline;
+}
+
+#profile
+{
+	float: left;
+	width:350px; 
+	height:400px;
+	border-radius: 6px;
+	margin: 0px 20px 0px 0px;
+}
+
+#styler
+{
+	font-size: 25px;
+	font-family: 'Cinzel', serif;
+}
+
+
+#gift
+{
+	width:400px;
+	height:250px;
+	border-radius: 6px;
+}
+
+
