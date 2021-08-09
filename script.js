@@ -1,4 +1,6 @@
-
+var purchases= [];
+var total_spent= 0;
+var balancio= 5000;
 // Creates the map
 function initMap()
 {
@@ -83,6 +85,8 @@ function initMap()
 }
 
 var events= ["Fairchild Tropical Botanical Garden", "Pelican Harbor Seabird Station", "Arthur R. Marshall Loxahatchee National Wildlife Refuge", "Gumbo Limbo Nature Center", "Ocala National Forest", "Biscayne National Park","Everglades National Park"];
+
+var my_events= [];
 
 
 function openPage(pageName, elmnt, color) {
@@ -194,7 +198,7 @@ function submit()
 	events.push(title.value);
 	var description= document.getElementById("description");
 	var description_image = document.getElementById("description_image");
-	var full_description= "<center><h1>" + title.value + "</h1></center><div class='container'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
+	var full_description= "<center><h1>" + title.value + "</h1></center><div class='containers'><div class='image'> <img style='width:300px;height:200px;' src=" + description_image.value +"></div><div class='text'><h3>"+ description.value+"</h3></div></div>";
 	var test= {coords: {lat: Number(latitude.value), lng: Number(longitude.value)}, content: full_description};
 	addMarker(test)
 	latitude.value = " ";
@@ -214,7 +218,25 @@ function fn1()
 		var elemento= document.getElementById(b);
 		if(elemento.checked==true)
 		{
-			alert("Registered for " + elemento.value);
+			my_events.push(events[i]);
+			alert("Registered for " + events[i]);
+		}
+	}
+}
+
+
+function my_profile()
+{
+	document.getElementById("panel").innerHTML = "";
+	if (my_events.length==0)
+	{
+		document.getElementById("panel").innerHTML+= "<p> No Events Currently Added!</p></br>";
+	}
+	else
+	{
+		for (var i=0; i<3;i++)
+		{
+			document.getElementById("panel").innerHTML+= "<p>" + my_events[i]+ "</p></br>";
 		}
 	}
 }
@@ -225,20 +247,86 @@ function event_click()
 	var a= document.getElementById("elements");
 	for(var i=0; i<events.length;i++)
 	{
-		var radiobox = document.createElement('input');
-		var label= document.createElement("label");
-		var br = document.createElement("br");
-		radiobox.type = 'radio';
-		radiobox.id = 'rd'+(i+1);
-		radiobox.value = events[i];
-		radiobox.name= 'grp1';
-		label.setAttribute("for",radiobox);
-		label.innerHTML= events[i];
-		a.appendChild(radiobox); 
-		a.appendChild(label);    
-		a.appendChild(br);
+		a.innerHTML+="<input type='radio' name='grp1' id=" + 'rd' + (i+1) +" value=" + events[i]+ "><label id='styler' for=" + 'rd'+ (i+1) +"class='container'>"+ events[i] +" <span class='checkmark'></span></label></br></br>";
+		
 	}
-	a.innerHTML += "<button onclick= 'fn1()'>Submit</button>";
+	a.innerHTML += "<center><button id='submit' onclick= 'fn1()'>Add Event to Your Profile</button></center>";
 	
 }
 
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+function select_lush()
+{
+	lushy= document.getElementById("lush");
+	lushy.style.borderColor= "black";
+	lushy.style.borderWidth= "3px";
+	purchases.push("Lush Gift Card");
+	total_spent+= 500;
+	
+}
+
+function select_patagonia()
+{
+	paty= document.getElementById("patagonia");
+	paty.style.borderColor= "black";
+	paty.style.borderWidth= "3px";
+	purchases.push("Patagonia Gift Card");
+	total_spent+= 300;
+	
+}
+function select_matnat()
+{
+	maty= document.getElementById("matnat");
+	maty.style.borderColor= "black";
+	maty.style.borderWidth= "3px";
+	purchases.push("Mat Nat Gift Card");
+	total_spent+= 200;
+	
+}
+function select_ravenlily()
+{
+	ravy= document.getElementById("ravenlily");
+	ravy.style.borderColor= "black";
+	ravy.style.borderWidth= "3px";
+	purchases.push("Raven Lily Gift Card");
+	total_spent+= 400;
+	
+}
+
+function shop()
+{
+	var alerty= "You bought the following gift cards:\n"
+	for(var i=0; i<purchases.length;i++)
+	{
+		alerty+= purchases[i] + "\n"
+	}
+	balancio= balancio-total_spent;
+	alerty+= "Your total spendings were " + total_spent + " Collection Coins and you have " + balancio + " Coins remaining."
+	document.getElementById("balance").innerHTML= "Your Account Balance: <u>" + balancio + "</u> Coins"
+	alert(alerty)
+	purchases= [];
+	total_spent= 0;
+	lushy= document.getElementById("lush");
+	paty= document.getElementById("patagonia");
+	maty= document.getElementById("matnat");
+	ravy= document.getElementById("ravenlily");
+	lushy.style.borderWidth= "0";
+	paty.style.borderWidth= "0";
+	maty.style.borderWidth= "0";
+	ravy.style.borderWidth= "0";
+}

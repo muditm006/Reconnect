@@ -58,6 +58,30 @@ body, html {
 }
 
 
+.lefty
+{
+	float:left; 
+	font-family: 'Cinzel', serif; 
+	font-size:25px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #d678ed;
+	background-color: #d678ed;
+	text-align: center;
+}
+
+.righty
+{
+	float:right; 
+	font-family: 'Cinzel', serif; 
+	font-size:25px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #d678ed;
+	background-color: #d678ed;
+	text-align: center;
+}
+
 .align-right
 { 
 	position: absolute;
@@ -84,6 +108,15 @@ body, html {
 	font-size: 60px;
 }
 
+#purchase
+{
+	width: 100%;
+	height: 75px;
+	font-family: 'Cinzel', serif; 
+	font-size:40px;
+	margin: 50px 0px 0px 0px;
+	background-color: #e4a5f3;
+}
 
 textarea
 {
@@ -113,4 +146,145 @@ textarea
 	font-family: 'Cinzel', serif;
 	text-align: center;
 	font-size: 45px;
+	text-decoration: underline;
+}
+
+#profile
+{
+	float: left;
+	width:350px; 
+	height:350px;
+	border-radius: 6px;
+	margin: 0px 20px 0px 0px;
+}
+
+#styler
+{
+	font-size: 25px;
+	font-family: 'Cinzel', serif;
+}
+
+
+#gift
+{
+	width:400px;
+	height:250px;
+	border-radius: 6px;
+}
+
+
+/* Customize the label (the container) */
+.containers {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 35px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containers input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.containers:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containers input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containers input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containers .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+input[type=radio] {
+   
+	width: 2%;
+	border: 0px;
+    height: 2em;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #d678ed;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border-radius: 6px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: #e4a5f3;
+  max-height: 0;
+  width: 47%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-family: 'Cinzel', serif; 
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 20px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  size: 500px;
 }

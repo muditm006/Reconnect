@@ -9,8 +9,8 @@
 	</head>
 	<body>
 		<button class="tablink" onclick="openPage('Home', this, '#9d8562')" >Home</button>
-		<button class="tablink" onclick="openPage('Events', this, '#98bd64')" id="defaultOpen">Events</button>
-		<button class="tablink" onclick="openPage('Rewards', this, '#e8dd4c')">Rewards</button>
+		<button class="tablink" onclick="openPage('Events', this, '#98bd64')" >Events</button>
+		<button class="tablink" onclick="openPage('Rewards', this, '#e8dd4c')" id="defaultOpen">Rewards</button>
 		<div id="Home" class="tabcontent">
 			<image src="images/RECONNECT.gif" class= "center"></image>
 		</div>
@@ -29,13 +29,39 @@
 				<button onclick="submit()" id= "submit"> Submit to Map</button>
 			</div>
 			</br></br>
-			<h1 id= "sub_header">Sign up for an event</h1>
-			<button onclick="event_click()" id= "events"> Events </button>
+			<h1 onclick="event_click()" id= "sub_header">Click Here to Sign Up for an Event</h1>
 			<div id="elements">
 			</div>
 		</div>
 		<div id="Rewards" class="tabcontent">
-			<h1> What's good</h1>
+			<h1 id="header"> Redeem Your Connection Coins </h1>
+			<h1 id="sub_header">Your Profile</h1>
+			<image id= "profile" src= "images/profile.jpg"></image>
+			<h1 style="font-family: 'Cinzel', serif; font-size:25px;">Username: John Smith</h1>
+			</br>
+			<button onclick="my_profile()" style="font-family: 'Cinzel', serif; font-size:25px;" class="accordion">Recent Events Attended</button>
+			<div class="panel" id="panel">
+			</div>
+			</br></br></br></br></br></br></br></br></br></br></br></br>
+			<h1 id="sub_header">Reconnect Shop</h1>
+			<center><h1 style="font-family: 'Cinzel', serif; font-size:25px;" id="balance">Your Account Balance: <u>5,000</u> Coins</h1></center>
+			<figure id= "lush" class="lefty" onclick="select_lush()">
+				<img id="gift" src="images/lush.png"></img>
+				<figcaption style= "margin-top:25px">$10-$300, minimum of 100CC</figcaption>
+			</figure>
+			<figure id= "patagonia" onclick="select_patagonia()" class= "righty">
+				<img id="gift" src="images/patagonia.png"></img>
+				<figcaption style= "margin-top:25px">$10-$1000, minimum of 100CC</figcaption>
+			</figure>
+			<figure id= "matnat" onclick= "select_matnat()" class="lefty">
+				<img id= "gift" src="images/mat_nat.jpg"></img>
+				<figcaption style= "margin-top:25px">$50, or 500CC</figcaption>
+			</figure>
+			<figure id="ravenlily" onclick= "select_ravenlily()"class="righty">
+				<img id= "gift" src="images/raven_lily.png"></img>
+				<figcaption style= "margin-top:25px">$25-$500, minimum of 250CC</figcaption>
+			</figure>
+			<button onclick= "shop()" id="purchase"> Purchase Your Selections </button>
 		</div>
 		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmBDoOIZEX_WROLw_8JsS8SHxxBzUKmDI&callback=initMap"></script>
 		<script src= "script.js"></script>
